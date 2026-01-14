@@ -1,0 +1,225 @@
+
+/* Gallery */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 100px auto 50px; /* خذت بالاعتبار الهيدر */
+}
+
+.gallery-card {
+    flex: 1 1 300px;
+    max-width: 350px;
+    height: 300px;
+    background: var(--bg-color);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+
+.gallery-card:hover {
+    transform: translateY(-10px);
+}
+
+.gallery-card::before {
+    content: "";
+    height: 50%;
+    width: 50%;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+}
+
+.gallery-card img {
+    position: absolute;
+    top: 20px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    object-fit: cover;
+    z-index: 1;
+}
+
+.card-info {
+    padding: 70px 15px 20px;
+    align-self: flex-end;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center; 
+    z-index: 1;
+}
+
+.p-name {
+    width: 100%;
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+    color: var(--text-color);
+}
+
+.p-sc {
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.card-icon {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card-icon button {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    animation-name: up-down;
+    animation-duration: 0.9s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.card-icon button:hover {
+    background-color: #8a0b0b;
+}
+
+.card-icon .button-two {
+    animation-delay: 0.3s;
+}
+
+.card-icon .button-three {
+    animation-delay: 0.6s;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color:#cdbbbb8d;
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.modal-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.modal-content p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.close-modal:hover {
+    color: #8a0b0b;
+}
+
+/* Animations */
+@keyframes up-down {
+    to {
+        opacity: 0.8;
+        transform: translateY(-10px);
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1.2rem;
+    }
+        .container {
+        gap: 20px;
+        padding: 15px;
+    }
+    
+    .card {
+        height: 280px;
+    }
+    
+    .p-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .card-info {
+        padding: 60px 15px 15px;
+    }
+    
+    .p-name {
+        font-size: 1.1rem;
+    }
+    
+    .card-icon button {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .nav-links a {
+        font-size: 1rem;
+        padding: 6px 10px;
+    }
+}

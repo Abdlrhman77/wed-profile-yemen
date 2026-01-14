@@ -1,0 +1,249 @@
+/* ===== Reset & Base ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Header ===== */
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--bg-color);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo_container {
+    display: flex;
+    align-items: center;
+}
+
+.logo_image {
+    width: 40px;
+    height: 40px;
+}
+
+.logo_text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.header_right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Sing_button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    transition: 0.3s;
+}
+
+.Sing_button:hover {
+    background-color: #8a0b0b;
+    color: #fff;
+}
+
+/* ===== Dashboard Container ===== */
+.dashboard-container {
+    display: flex;
+    margin-top: 90px; /* Header height */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* ===== Sidebar ===== */
+aside {
+    width: 250px;
+    background: var(--bg-color);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+aside h2 {
+    color: var(--text-color);
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+aside a {
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+aside a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* ===== Main Content ===== */
+main {
+    flex: 1;
+    background: var(--bg-color);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    min-height: 70vh;
+}
+
+/* ===== Tables ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4f4f4;
+    color: var(--primary-color);
+}
+
+table tr:hover {
+    background-color: var(--primary-color);
+    
+}
+
+#Save-Change {
+    color: var(--primary-color);
+    background-color: #fff;
+    font-size: 1rem;
+    border: 2px solid var(--primary-color);
+
+}
+#Save-Change:hover {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.button-three {
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  animation-name: up-down;
+  animation-duration: 0.9s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.button-three:hover {
+  background-color: #8a0b0b;
+}
+button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button.edit {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+button.delete {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+/* ===== Form Inputs ===== */
+input[type=text], input[type=number], select {
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+input[type=text]:focus, input[type=number]:focus, select:focus {
+    outline: none;
+    border: 2px solid var(--primary-color);
+}
+
+/* ===== Success / Toast Message ===== */
+#addMsg {
+    font-weight: bold;
+    color: #00aa00;
+}
+
+/* ===== Settings Page ===== */
+#colorPicker {
+    width: 60px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px){
+    .dashboard-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    aside { width: 90%; margin-bottom: 20px; }
+    main { width: 90%; }
+}
+
+@media (max-width: 480px){
+    .header_container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .Sing_button { width: 100%; text-align: center; }
+    aside { padding: 15px; }
+}

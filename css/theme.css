@@ -1,0 +1,13 @@
+
+:root {
+  --bg-color: #f4f9f6;
+  --text-color: #333;
+  --primary-color: #af0e0e;
+}
+
+
+body.dark {
+  --bg-color: #2c2c2c;
+  --text-color: #f4f4f4;
+}
+
